@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clocl with Date</title>
+    <style>
+       .container {
+            height: 300px;
+            width: 600px;
+            margin: 20px 500px;
+            border: 2px solid;
+            background-color: rgb(165, 163, 161);
+        }
+        .container h1 {
+            margin: 45px 40px;
+            color: rgb(71, 67, 67);
+        }
+    </style>
+    <script>
+        let a;
+        let date;
+        let time;
+        const Options = {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        };
+        setInterval(() => {
+            a = new Date();
+            date = a.toLocaleDateString(undefined, Options);
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time + " <br> on " + date;
+        }, 1000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>CURRENT TIME: <span id="time"></span> </h1>
+        </div>
+    </div>
+</body>
+</html>
